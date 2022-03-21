@@ -1,0 +1,5 @@
+SELECT DISTINCT u.name,u.address FROM users u 
+JOIN bookingdetails b ON u.user_id = b.user_id
+WHERE u.user_id NOT in ( SELECT user_id from bookingdetails 
+WHERE name = "HDFC")
+ORDER BY u.name;
